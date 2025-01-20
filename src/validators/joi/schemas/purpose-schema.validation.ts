@@ -1,6 +1,6 @@
 import Joi, { ObjectSchema } from 'joi';
 
-import { Purpose } from '../../types';
+import { Purpose } from '../../../types';
 
 export const purposeSchema: ObjectSchema<Purpose> = Joi.object({
   id: Joi.number().integer().positive().min(1).required(),

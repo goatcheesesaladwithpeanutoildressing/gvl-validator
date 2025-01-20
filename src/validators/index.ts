@@ -1,1 +1,2 @@
-export * from './joi.validator';
+export * from './joi/joi.validator';
+export * from './yup';

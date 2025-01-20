@@ -1,4 +1,4 @@
-import { ValidationResponse, Validator } from '../types';
+import { ValidationResponse, Validator } from '../../types';
 
 export class YupValidator implements Validator {
   constructor() {}

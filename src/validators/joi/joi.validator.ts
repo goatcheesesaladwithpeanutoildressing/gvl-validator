@@ -1,7 +1,7 @@
 import { ValidationErrorItem, ValidationResult } from 'joi';
-import { Gvl, ValidationResponse, Validator } from '../types';
-import { getDataCategoryIds } from '../utils';
-import { gvlSchema } from '../validation-schemas';
+import { Gvl, ValidationResponse, Validator } from '../../types';
+import { getDataCategoryIds } from '../../utils';
+import { gvlSchema } from './schemas';
 
 export class JoiValidator implements Validator {
   constructor() {}
