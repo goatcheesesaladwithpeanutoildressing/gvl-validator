@@ -1,5 +1,5 @@
 import Joi, { ObjectSchema } from 'joi';
-import { POSITIVE_INTEGER_REGEXP } from '../constants';
+import { POSITIVE_INTEGER_REGEXP } from '../../../constants';
 
 /**
  * Generate a Joi schema to validate wether

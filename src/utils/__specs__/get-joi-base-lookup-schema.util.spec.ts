@@ -1,5 +1,5 @@
 import Joi, { ObjectSchema } from 'joi';
-import { getJoiBaseLookupSchema } from '../get-joi-base-lookup-schema.util';
+import { getJoiBaseLookupSchema } from '../../validators/joi/utils/get-joi-base-lookup-schema.util';
 
 describe('Utils > getJoiBaseLookupSchema', () => {
   interface TestType {
