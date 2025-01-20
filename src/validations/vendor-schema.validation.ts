@@ -1,8 +1,8 @@
-import Joi, { ObjectSchema, CustomHelpers } from "joi";
+import Joi, { ObjectSchema, CustomHelpers } from 'joi';
 
-import { Vendor } from "../types";
-import { vendorOverflowSchema } from "./vendor-overfow-schema.validation";
-import { vendorUrlSchema } from "./vendor-url-schema.validation";
+import { Vendor } from '../types';
+import { vendorOverflowSchema } from './vendor-overfow-schema.validation';
+import { vendorUrlSchema } from './vendor-url-schema.validation';
 
 /**
  * Validate wether the input data category id is
@@ -11,7 +11,7 @@ import { vendorUrlSchema } from "./vendor-url-schema.validation";
  * @param helpers Joi helper functions
  * @returns
  */
-const dataCategoryIdValidator = (value: number, helpers: CustomHelpers) => {
+const dataCategoryIdValidator = (value: number, helpers: CustomHelpers): number => {
   const dataCategoryIds: Set<number> = helpers.prefs.context.dataCategoryIds;
 
   const isValid = dataCategoryIds.has(value);
@@ -29,7 +29,7 @@ export const vendorSchema: ObjectSchema<Vendor> = Joi.object({
   usesCookies: Joi.boolean().required(),
   cookieMaxAgeSeconds: Joi.number()
     .integer()
-    .when("usesCookies", {
+    .when('usesCookies', {
       is: false,
       then: Joi.allow(null),
       otherwise: Joi.required(),
@@ -37,9 +37,7 @@ export const vendorSchema: ObjectSchema<Vendor> = Joi.object({
   cookieRefresh: Joi.boolean().required(),
   usesNonCookieAccess: Joi.boolean().required(),
   deviceStorageDisclosureUrl: Joi.string().uri().required(),
-  dataDeclaration: Joi.array().items(
-    Joi.number().integer().custom(dataCategoryIdValidator)
-  ),
+  dataDeclaration: Joi.array().items(Joi.number().integer().custom(dataCategoryIdValidator)),
   urls: Joi.array().items(vendorUrlSchema).min(1).required(),
   overflow: vendorOverflowSchema.optional(),
   deletedDate: Joi.date().iso().allow(null),

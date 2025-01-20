@@ -1,1 +1,1 @@
-export const POSITIVE_INTEGER_REGEX = /^\d+$/
+export const POSITIVE_INTEGER_REGEXP = /^\d+$/;

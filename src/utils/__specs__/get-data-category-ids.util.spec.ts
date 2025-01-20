@@ -1,7 +1,7 @@
-import { getDataCategoryIds } from "../get-data-category-ids.util";
+import { getDataCategoryIds } from '../get-data-category-ids.util';
 
-describe("Utils > getDataCategoryIds", () => {
-  it("should properly return a set of unique data category ids", () => {
+describe('Utils > getDataCategoryIds', () => {
+  it('should properly return a set of unique data category ids', () => {
     const mockRawData = {
       dataCategories: {
         1: {
@@ -16,14 +16,12 @@ describe("Utils > getDataCategoryIds", () => {
     expect(getDataCategoryIds(mockRawData)).toEqual(new Set([1, 2]));
   });
 
-  it("should handle invalid data categories formats gracefully", () => {
+  it('should handle invalid data categories formats gracefully', () => {
     const mockRawDataDataCategoriesBadFormatArray = {
       dataCategories: [],
     };
 
-    expect(getDataCategoryIds(mockRawDataDataCategoriesBadFormatArray)).toEqual(
-      new Set([])
-    );
+    expect(getDataCategoryIds(mockRawDataDataCategoriesBadFormatArray)).toEqual(new Set([]));
 
     const mockRawDataDataCategoriesBadFormatSingleObject = {
       dataCategories: {
@@ -31,25 +29,19 @@ describe("Utils > getDataCategoryIds", () => {
       },
     };
 
-    expect(
-      getDataCategoryIds(mockRawDataDataCategoriesBadFormatSingleObject)
-    ).toEqual(new Set([]));
+    expect(getDataCategoryIds(mockRawDataDataCategoriesBadFormatSingleObject)).toEqual(new Set([]));
   });
 
-  it("should handle null, empty, undefined data categories gracefully", () => {
+  it('should handle null, empty, undefined data categories gracefully', () => {
     const mockRawDataDataCategoriesNull = {
       dataCategories: null,
     };
 
-    expect(getDataCategoryIds(mockRawDataDataCategoriesNull)).toEqual(
-      new Set([])
-    );
+    expect(getDataCategoryIds(mockRawDataDataCategoriesNull)).toEqual(new Set([]));
 
     const mockRawDataDataCategoriesUndefined = {};
 
-    expect(getDataCategoryIds(mockRawDataDataCategoriesUndefined)).toEqual(
-      new Set([])
-    );
+    expect(getDataCategoryIds(mockRawDataDataCategoriesUndefined)).toEqual(new Set([]));
 
     const mockRawDataNull = null;
 

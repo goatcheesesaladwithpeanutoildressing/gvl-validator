@@ -1,4 +1,4 @@
-import { Descriptable } from "./descriptable-type";
+import { Descriptable } from './descriptable-type';
 
 export type Purpose = Descriptable & {
   illustrations: string[];

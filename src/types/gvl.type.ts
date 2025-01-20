@@ -1,7 +1,7 @@
-import { DataCategory } from "./data-category.type";
-import { Vendor } from "./vendor.type";
-import { Purpose } from "./purpose.type";
-import { Feature } from "./feature.type";
+import { DataCategory } from './data-category.type';
+import { Vendor } from './vendor.type';
+import { Purpose } from './purpose.type';
+import { Feature } from './feature.type';
 
 export type Gvl = {
   gvlSpecificationVersion: number;

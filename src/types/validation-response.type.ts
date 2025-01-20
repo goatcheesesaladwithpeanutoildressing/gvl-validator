@@ -1,4 +1,4 @@
-import { ValidationIssue } from "./validation-issue.type";
+import { ValidationIssue } from './validation-issue.type';
 
 export type ValidationResponse = {
   issues?: ValidationIssue[];

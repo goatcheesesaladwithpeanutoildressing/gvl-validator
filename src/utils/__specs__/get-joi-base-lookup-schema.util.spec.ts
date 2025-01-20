@@ -1,7 +1,7 @@
-import Joi, { ObjectSchema } from "joi";
-import { getJoiBaseLookupSchema } from "../get-joi-base-lookup-schema.util";
+import Joi, { ObjectSchema } from 'joi';
+import { getJoiBaseLookupSchema } from '../get-joi-base-lookup-schema.util';
 
-describe("Utils > getJoiBaseLookupSchema", () => {
+describe('Utils > getJoiBaseLookupSchema', () => {
   interface TestType {
     id: number;
     name: string;
@@ -14,10 +14,10 @@ describe("Utils > getJoiBaseLookupSchema", () => {
 
   const schema = getJoiBaseLookupSchema(targetSchema);
 
-  it("should validate an object with valid positive integer string keys", () => {
+  it('should validate an object with valid positive integer string keys', () => {
     const input = {
-      "1": { id: 1, name: "Alice" },
-      "42": { id: 42, name: "Bob" },
+      '1': { id: 1, name: 'Alice' },
+      '42': { id: 42, name: 'Bob' },
     };
     const { error, value } = schema.validate(input);
 
@@ -25,39 +25,39 @@ describe("Utils > getJoiBaseLookupSchema", () => {
     expect(value).toEqual(input);
   });
 
-  it("should reject keys that do not match the positive integer pattern", () => {
+  it('should reject keys that do not match the positive integer pattern', () => {
     const input = {
-      "-1": { id: 1, name: "Alice" }, // Invalid key
-      "abc": { id: 2, name: "Bob" },  // Invalid key
+      '-1': { id: 1, name: 'Alice' }, // Invalid key
+      abc: { id: 2, name: 'Bob' }, // Invalid key
     };
     const { error } = schema.validate(input);
 
     expect(error).toBeDefined();
-    expect(error?.details[0].message).toEqual("\"-1\" is not allowed");
+    expect(error?.details[0].message).toEqual('"-1" is not allowed');
   });
 
-  it("should reject keys that are empty strings", () => {
+  it('should reject keys that are empty strings', () => {
     const input = {
-      "": { id: 1, name: "Alice" }, // Invalid key
+      '': { id: 1, name: 'Alice' }, // Invalid key
     };
     const { error } = schema.validate(input);
 
     expect(error).toBeDefined();
-    expect(error?.details[0].message).toEqual("\"value\" is not allowed");
+    expect(error?.details[0].message).toEqual('"value" is not allowed');
   });
 
-  it("should reject values that do not match the target schema", () => {
+  it('should reject values that do not match the target schema', () => {
     const input = {
-      "1": { id: "not-a-number", name: "Alice" }, // Invalid id type
-      "2": { id: 2 },                            // Missing name
+      '1': { id: 'not-a-number', name: 'Alice' }, // Invalid id type
+      '2': { id: 2 }, // Missing name
     };
     const { error } = schema.validate(input);
 
     expect(error).toBeDefined();
-    expect(error?.details[0].message).toEqual("\"1.id\" must be a number");
+    expect(error?.details[0].message).toEqual('"1.id" must be a number');
   });
 
-  it("should validate an empty object", () => {
+  it('should validate an empty object', () => {
     const input = {};
     const { error, value } = schema.validate(input);
 

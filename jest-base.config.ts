@@ -1,23 +1,23 @@
-import type { Config } from 'jest';
+import type { Config } from "jest";
 
 const getBaseJestConfig = (rootDir: string): Config => ({
   rootDir,
-  testEnvironment: 'node',
-  testRegex: '.*\\.spec\\.ts$',
-  moduleFileExtensions: ['json', 'js', 'ts'],
-  modulePathIgnorePatterns: ['<rootDir>/dist', '<rootDir>/node_modules'],
+  testEnvironment: "node",
+  testRegex: ".*\\.spec\\.ts$",
+  moduleFileExtensions: ["json", "js", "ts"],
+  modulePathIgnorePatterns: ["<rootDir>/dist", "<rootDir>/node_modules"],
   collectCoverageFrom: [
-    'src/**/*.ts',
-    '!**/jest.config.ts',
-    '!**/index.ts',
-    '!**/*.interface.ts',
-    '!**/*.type.ts',
-    '!**/*.enum.ts',
-    '!**/*.module.ts',
-    '!**/*.constants.ts',
+    "src/**/*.ts",
+    "!**/jest.config.ts",
+    "!**/index.ts",
+    "!**/*.interface.ts",
+    "!**/*.type.ts",
+    "!**/*.enum.ts",
+    "!**/*.module.ts",
+    "!**/*.constants.ts",
   ],
-  coverageDirectory: '<rootDir>/coverage',
-  coverageReporters: ['html', 'lcov', 'text'],
+  coverageDirectory: "<rootDir>/coverage",
+  coverageReporters: ["html", "lcov", "text"],
   coverageThreshold: {
     global: {
       branches: 100,
@@ -37,9 +37,9 @@ const getBaseJestConfig = (rootDir: string): Config => ({
    */
   resetMocks: true,
   restoreMocks: true,
-  preset: 'ts-jest',
+  preset: "ts-jest",
   transform: {
-    '^.+\\.(t|j)s$': 'ts-jest',
+    "^.+\\.(t|j)s$": "ts-jest",
   },
 });
 

@@ -1,5 +1,5 @@
-import { VendorOverflow } from "./vendor-overflow.type";
-import { VendorUrl } from "./vendor-url.type";
+import { VendorOverflow } from './vendor-overflow.type';
+import { VendorUrl } from './vendor-url.type';
 
 export type Vendor = {
   id: number;

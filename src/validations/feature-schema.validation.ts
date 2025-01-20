@@ -1,6 +1,6 @@
-import Joi, { ObjectSchema } from "joi";
+import Joi, { ObjectSchema } from 'joi';
 
-import { Feature } from "src/types";
+import { Feature } from '../types';
 
 export const featureSchema: ObjectSchema<Feature> = Joi.object({
   id: Joi.number().integer().positive().min(1).required(),

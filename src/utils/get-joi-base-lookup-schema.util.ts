@@ -1,8 +1,8 @@
-import Joi, { ObjectSchema } from "joi";
-import { POSITIVE_INTEGER_REGEX } from "../constants";
+import Joi, { ObjectSchema } from 'joi';
+import { POSITIVE_INTEGER_REGEXP } from '../constants';
 
 /**
- * Generate a Joi schema to validate wether 
+ * Generate a Joi schema to validate wether
  * the input data is an object where the keys are numerical positive ids.
  * Expected input format:
  * {
@@ -12,8 +12,8 @@ import { POSITIVE_INTEGER_REGEX } from "../constants";
  *  },
  *  ...
  * }
- * @param targetSchema 
- * @returns 
+ * @param targetSchema
+ * @returns
  */
-export const getJoiBaseLookupSchema = <T>(targetSchema: ObjectSchema<T>): ObjectSchema<T> => Joi.object()
-.pattern(Joi.string().regex(POSITIVE_INTEGER_REGEX), targetSchema)
+export const getJoiBaseLookupSchema = <T>(targetSchema: ObjectSchema<T>): ObjectSchema<T> =>
+  Joi.object().pattern(Joi.string().regex(POSITIVE_INTEGER_REGEXP), targetSchema);
