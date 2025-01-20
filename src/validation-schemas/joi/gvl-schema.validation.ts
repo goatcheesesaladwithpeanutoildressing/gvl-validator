@@ -1,11 +1,11 @@
 import Joi, { ObjectSchema } from 'joi';
 
-import { DataCategory, Feature, Gvl, Purpose, Vendor } from '../types';
+import { DataCategory, Feature, Gvl, Purpose, Vendor } from '../../types';
 import { dataCategorySchema } from './data-category-schema.validation';
 import { purposeSchema } from './purpose-schema.validation';
 import { vendorSchema } from './vendor-schema.validation';
 import { featureSchema } from './feature-schema.validation';
-import { getJoiBaseLookupSchema } from '../utils';
+import { getJoiBaseLookupSchema } from '../../utils';
 
 export const gvlSchema: ObjectSchema<Gvl> = Joi.object({
   gvlSpecificationVersion: Joi.number().integer().positive().min(1).required(),

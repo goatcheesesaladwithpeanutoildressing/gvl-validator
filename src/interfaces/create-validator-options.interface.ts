@@ -1,5 +1,5 @@
 import { ValidatorLib } from '../enums/validator-lib.enum';
 
-export interface CreateValidatorOptions {
+export interface CreateValidatorConfig {
   lib: ValidatorLib;
 }

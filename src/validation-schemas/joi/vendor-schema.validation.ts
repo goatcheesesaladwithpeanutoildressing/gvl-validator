@@ -1,6 +1,6 @@
 import Joi, { ObjectSchema, CustomHelpers } from 'joi';
 
-import { Vendor } from '../types';
+import { Vendor } from '../../types';
 import { vendorOverflowSchema } from './vendor-overfow-schema.validation';
 import { vendorUrlSchema } from './vendor-url-schema.validation';
 
